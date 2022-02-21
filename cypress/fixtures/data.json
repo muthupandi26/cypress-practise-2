@@ -1,0 +1,7 @@
+{
+    "login": {
+        "username": "admin",
+        "password": "admin",
+        "loginErrorMessage": "Incorrect User or Password"
+    }
+}
