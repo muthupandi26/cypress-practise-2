@@ -13,7 +13,7 @@ export class Homepage extends BaseAction {
         goLogIn: '//a[@id="login2"]',
         USERNAME_INPUT: '//input[@id="loginusername"]',
         PASSWORD_INPUT: '//input[@id="loginpassword"]',
-        SignIn_Btn: '//button[@class="btn btn-primary"]',
+        SignIn_Btn: '//button[@onclick="logIn()"]',
 
 
         goContactHome: '//img[@id="reseller-login_img"]',
