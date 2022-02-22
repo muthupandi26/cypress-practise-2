@@ -13,13 +13,17 @@ When("Login on DemoBlaze", () => {
     baseAction.openBrowser(Constant.BASE_URL);
     homepage.goContactHome();
     homepage.loginWith(validLogin.username, validLogin.password);
-});
+})
+
+Then('I should see error message', () => {
+    homepage.shouldSeePage();
+})
 
 When("Login on DemoBlaze with invalid password", () => {
     baseAction.openBrowser(Constant.BASE_URL);
     homepage.goContactHome();
     homepage.loginWith(invalidPasswordLogin.username, invalidPasswordLogin.password);
-});
+})
 
 
 When("Login on DemoBlaze with invalid username", () => {

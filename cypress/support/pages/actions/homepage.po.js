@@ -14,6 +14,7 @@ export class Homepage extends BaseAction {
         USERNAME_INPUT: '//input[@id="loginusername"]',
         PASSWORD_INPUT: '//input[@id="loginpassword"]',
         SignIn_Btn: '//button[@onclick="logIn()"]',
+        title: '//a[@id="nameofuser"]',
 
 
         goContactHome: '//img[@id="reseller-login_img"]',
@@ -32,5 +33,10 @@ export class Homepage extends BaseAction {
         this.type(this.elements.USERNAME_INPUT, username);
         this.type(this.elements.PASSWORD_INPUT, password);
         this.click(this.elements.SignIn_Btn);
+    }
+
+    shouldSeePage() {
+        this.shouldVisible(this.elements.title);
+        // cy.get('//a[@id="nava"]').should('be.visible');
     }
 }
