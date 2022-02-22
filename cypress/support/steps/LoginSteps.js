@@ -1,14 +1,29 @@
 import {Homepage} from "../pages/actions/homepage.po";
 import { BaseAction } from '../common/baseAction';
 import { Constant } from "../common/constants";
-import * as loginData from '../../fixtures/data';
+import * as data from '../../fixtures/data';
 
-const login = loginData.login;
+const validLogin = data.Login.validLogin;
+const invalidPasswordLogin = data.Login.invalidPassword;
+const invalidUserNameLogin = data.Login.invalidUserName;
 const homepage =  new Homepage();
 const baseAction = new BaseAction();
 
-When("Login on GoContact UI", () => {
+When("Login on DemoBlaze", () => {
     baseAction.openBrowser(Constant.BASE_URL);
     homepage.goContactHome();
-    homepage.loginWith(login.username, login.password);
+    homepage.loginWith(validLogin.username, validLogin.password);
+});
+
+When("Login on DemoBlaze with invalid password", () => {
+    baseAction.openBrowser(Constant.BASE_URL);
+    homepage.goContactHome();
+    homepage.loginWith(invalidPasswordLogin.username, invalidPasswordLogin.password);
+});
+
+
+When("Login on DemoBlaze with invalid username", () => {
+    baseAction.openBrowser(Constant.BASE_URL);
+    homepage.goContactHome();
+    homepage.loginWith(invalidUserNameLogin.username, invalidUserNameLogin.password);
 });
