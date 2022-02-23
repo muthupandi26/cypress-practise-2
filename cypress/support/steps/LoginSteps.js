@@ -33,7 +33,24 @@ Then('I should see homepage', () => {
     homepage.shouldSeePage();
 })
 
+Then('logout', () => {
+    homepage.logout()
+})
+
 Then('I should see error message', () => {
     cy.log("Invalid username and password");
 
+})
+
+
+When("visit w3schools page", () => {
+    baseAction.openBrowser(Constant.second_URL)
+})
+
+Then("search anything", () => {
+    homepage.search()
+})
+
+Then("search result is found", () => {
+    homepage.searchFound();
 })

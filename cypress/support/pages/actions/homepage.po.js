@@ -15,11 +15,14 @@ export class Homepage extends BaseAction {
         PASSWORD_INPUT: '//input[@id="loginpassword"]',
         SignIn_Btn: '//button[@onclick="logIn()"]',
         title: '//a[@id="nameofuser"]',
+        logout: '//a[@id="logout2"]',
 
 
         goContactHome: '//img[@id="reseller-login_img"]',
 
-       
+        search: '//input[@id="search2"]',
+        searchClick: '//button[@id="learntocode_searchbtn"]',
+        searchFound: '//a[@title="HTML Tutorial"]',
         // USERNAME_INPUT: '//input[@name="email"]',
         // PASSWORD_INPUT: '//input[@name="password"]',
         // SignIn_Btn: '//button[@id="btn-login"]',
@@ -42,5 +45,17 @@ export class Homepage extends BaseAction {
         
     }
 
+    logout() {
+        this.click(this.elements.logout)
+    }
+
+    search() {
+        this.type(this.elements.search, "html")
+        this.click(this.elements.searchClick)
+    }
+
+    searchFound() {
+        this.shouldVisible(this.elements.searchFound)
+    }
 
 }
