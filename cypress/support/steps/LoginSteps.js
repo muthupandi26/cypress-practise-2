@@ -15,9 +15,6 @@ When("Login on DemoBlaze", () => {
     homepage.loginWith(validLogin.username, validLogin.password);
 })
 
-Then('I should see error message', () => {
-    homepage.shouldSeePage();
-})
 
 When("Login on DemoBlaze with invalid password", () => {
     baseAction.openBrowser(Constant.BASE_URL);
@@ -30,4 +27,13 @@ When("Login on DemoBlaze with invalid username", () => {
     baseAction.openBrowser(Constant.BASE_URL);
     homepage.goContactHome();
     homepage.loginWith(invalidUserNameLogin.username, invalidUserNameLogin.password);
-});
+})
+
+Then('I should see homepage', () => {
+    homepage.shouldSeePage();
+})
+
+Then('I should see error message', () => {
+    cy.log("Invalid username and password");
+
+})

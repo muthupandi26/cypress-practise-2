@@ -18,6 +18,8 @@ export class Homepage extends BaseAction {
 
 
         goContactHome: '//img[@id="reseller-login_img"]',
+
+       
         // USERNAME_INPUT: '//input[@name="email"]',
         // PASSWORD_INPUT: '//input[@name="password"]',
         // SignIn_Btn: '//button[@id="btn-login"]',
@@ -37,6 +39,8 @@ export class Homepage extends BaseAction {
 
     shouldSeePage() {
         this.shouldVisible(this.elements.title);
-        // cy.get('//a[@id="nava"]').should('be.visible');
+        
     }
+
+
 }
